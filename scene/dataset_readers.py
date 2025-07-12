@@ -72,6 +72,95 @@ class CameraInfo(NamedTuple):
     timestamp: float = -1
 
 
+class LazyLoadCameraInfo:
+    """延迟加载版本的CameraInfo，用于按需读取图像数据"""
+    def __init__(self, uid, R, T, FovY, FovX, image_path, image_name, width, height,
+                 depth_path, pose_gt=None, cx=-1, cy=-1, depth_scale=1, timestamp=-1,
+                 crop_edge=0, intrinsic=None):
+        # 存储所有元数据
+        self.uid = uid
+        self.R = R
+        self.T = T
+        self.FovY = FovY
+        self.FovX = FovX
+        self.image_path = image_path
+        self.image_name = image_name
+        self.width = width
+        self.height = height
+        self.depth_path = depth_path
+        self.pose_gt = pose_gt if pose_gt is not None else np.eye(4)
+        self.cx = cx
+        self.cy = cy
+        self.depth_scale = depth_scale
+        self.timestamp = timestamp
+
+        # 延迟加载相关参数
+        self._crop_edge = crop_edge
+        self._intrinsic = intrinsic
+
+        # 延迟加载状态
+        self._image = None
+        self._depth = None
+        self._image_loaded = False
+        self._depth_loaded = False
+
+    @property
+    def image(self):
+        """延迟加载图像数据"""
+        if not self._image_loaded:
+            image_color = Image.open(self.image_path)
+            if self.depth_path and os.path.exists(self.depth_path):  # 如果有深度图，需要调整尺寸匹配
+                # 先加载深度图获取尺寸
+                temp_depth = Image.open(self.depth_path)
+                image_color = np.asarray(
+                    image_color.resize((temp_depth.size[0], temp_depth.size[1]))
+                )
+            else:
+                image_color = np.asarray(image_color)
+
+            # 应用裁剪
+            if self._crop_edge > 0:
+                image_color = image_color[
+                    self._crop_edge:-self._crop_edge,
+                    self._crop_edge:-self._crop_edge,
+                    :,
+                ]
+
+            self._image = Image.fromarray(image_color)
+            self._image_loaded = True
+        return self._image
+
+    @property
+    def depth(self):
+        """延迟加载深度数据"""
+        if not self._depth_loaded:
+            if self.depth_path and os.path.exists(self.depth_path):
+                image_depth = (
+                    np.asarray(Image.open(self.depth_path), dtype=np.float32) / self.depth_scale
+                )
+
+                # 应用裁剪
+                if self._crop_edge > 0:
+                    image_depth = image_depth[
+                        self._crop_edge:-self._crop_edge,
+                        self._crop_edge:-self._crop_edge,
+                    ]
+
+                self._depth = Image.fromarray(image_depth)
+            else:
+                # 如果没有深度路径，创建零深度图
+                self._depth = Image.fromarray(np.zeros((self.height, self.width)))
+            self._depth_loaded = True
+        return self._depth
+
+    def release_data(self):
+        """释放已加载的图像数据，保留元数据"""
+        self._image = None
+        self._depth = None
+        self._image_loaded = False
+        self._depth_loaded = False
+
+
 class SceneInfo(NamedTuple):
     point_cloud: BasicPointCloud  # position, color, normal pcd
     train_cameras: list  # list[CameraInfo]
@@ -855,6 +944,7 @@ def readCameras(
     timestamps,
     crop_edge=0,
     eval_=False,
+    lazy_load=True,  # 新增参数，默认启用延迟加载
 ):
     cam_infos = []
     pose_w_t0 = np.eye(4)
@@ -881,52 +971,94 @@ def readCameras(
         )  # R is stored transposed due to 'glm' in CUDA code
         T = w2c[:3, 3]
 
-        image_color = Image.open(color_paths[idx])
-        image_depth = (
-            np.asarray(Image.open(depth_paths[idx]), dtype=np.float32) / depth_scale
-        )
-        image_color = np.asarray(
-            image_color.resize((image_depth.shape[1], image_depth.shape[0]))
-        )
         fx, fy = intrinsic[0, 0], intrinsic[1, 1]
         cx, cy = intrinsic[0, 2], intrinsic[1, 2]
-        if crop_edge > 0:
-            image_color = image_color[
-                crop_edge:-crop_edge,
-                crop_edge:-crop_edge,
-                :,
-            ]
-            image_depth = image_depth[
-                crop_edge:-crop_edge,
-                crop_edge:-crop_edge,
-            ]
-            cx -= crop_edge
-            cy -= crop_edge
 
-        height, width = image_color.shape[:2]
-        # print("image size:", height, width)
-        FovX = focal2fov(fx, width)
-        FovY = focal2fov(fy, height)
-        image_name = os.path.basename(color_paths[idx]).split(".")[0]
+        if lazy_load:
+            # 延迟加载模式：只加载一张图片获取尺寸信息，不加载实际数据
+            temp_image = Image.open(color_paths[idx])
+            if depth_paths[idx] and os.path.exists(depth_paths[idx]):
+                temp_depth = Image.open(depth_paths[idx])
+                width, height = temp_depth.size
+            else:
+                width, height = temp_image.size
 
-        cam_info = CameraInfo(
-            uid=idx_,
-            R=R,
-            T=T,
-            FovY=FovY,
-            FovX=FovX,
-            image=Image.fromarray(image_color),
-            image_path=color_paths[idx],
-            image_name=image_name,
-            width=width,
-            height=height,
-            depth=Image.fromarray(image_depth),
-            depth_path=depth_paths[idx],
-            cx=cx,
-            cy=cy,
-            depth_scale=depth_scale,
-            timestamp=timestamps[idx],
-        )
+            # 调整cx, cy以适应裁剪
+            if crop_edge > 0:
+                width -= 2 * crop_edge
+                height -= 2 * crop_edge
+                cx -= crop_edge
+                cy -= crop_edge
+
+            FovX = focal2fov(fx, width)
+            FovY = focal2fov(fy, height)
+            image_name = os.path.basename(color_paths[idx]).split(".")[0]
+
+            cam_info = LazyLoadCameraInfo(
+                uid=idx_,
+                R=R,
+                T=T,
+                FovY=FovY,
+                FovX=FovX,
+                image_path=color_paths[idx],
+                image_name=image_name,
+                width=width,
+                height=height,
+                depth_path=depth_paths[idx],
+                cx=cx,
+                cy=cy,
+                depth_scale=depth_scale,
+                timestamp=timestamps[idx],
+                crop_edge=crop_edge,
+                intrinsic=intrinsic,
+            )
+        else:
+            # 原始模式：立即加载所有数据（保持向后兼容）
+            image_color = Image.open(color_paths[idx])
+            image_depth = (
+                np.asarray(Image.open(depth_paths[idx]), dtype=np.float32) / depth_scale
+            )
+            image_color = np.asarray(
+                image_color.resize((image_depth.shape[1], image_depth.shape[0]))
+            )
+
+            if crop_edge > 0:
+                image_color = image_color[
+                    crop_edge:-crop_edge,
+                    crop_edge:-crop_edge,
+                    :,
+                ]
+                image_depth = image_depth[
+                    crop_edge:-crop_edge,
+                    crop_edge:-crop_edge,
+                ]
+                cx -= crop_edge
+                cy -= crop_edge
+
+            height, width = image_color.shape[:2]
+            FovX = focal2fov(fx, width)
+            FovY = focal2fov(fy, height)
+            image_name = os.path.basename(color_paths[idx]).split(".")[0]
+
+            cam_info = CameraInfo(
+                uid=idx_,
+                R=R,
+                T=T,
+                FovY=FovY,
+                FovX=FovX,
+                image=Image.fromarray(image_color),
+                image_path=color_paths[idx],
+                image_name=image_name,
+                width=width,
+                height=height,
+                depth=Image.fromarray(image_depth),
+                depth_path=depth_paths[idx],
+                cx=cx,
+                cy=cy,
+                depth_scale=depth_scale,
+                timestamp=timestamps[idx],
+            )
+
         cam_infos.append(cam_info)
     sys.stdout.write("\n")
     return cam_infos
@@ -1043,6 +1175,7 @@ def readOursSceneInfo(
         timestamps=timestamps,
         crop_edge=crop_edge,
         eval_=eval_,
+        lazy_load=True,  # 启用延迟加载
     )
     saveCameraJson(
         poses,

@@ -1,0 +1,639 @@
+==================== Sun Jul  6 00:12:28 CST 2025 ====================
+GPU 使用情况:
+2, 1443, 12282, 45
+CPU 使用情况:
+%Cpu(s):  1.3 us,  0.7 sy,  0.0 ni, 98.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       475Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:31 CST 2025 ====================
+GPU 使用情况:
+27, 1437, 12282, 45
+CPU 使用情况:
+%Cpu(s):  4.6 us,  0.7 sy,  0.0 ni, 94.4 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       474Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:33 CST 2025 ====================
+GPU 使用情况:
+1, 1435, 12282, 45
+CPU 使用情况:
+%Cpu(s):  0.7 us,  0.0 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       474Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:36 CST 2025 ====================
+GPU 使用情况:
+0, 1471, 12282, 45
+CPU 使用情况:
+%Cpu(s):  2.0 us,  0.3 sy,  0.0 ni, 97.4 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:38 CST 2025 ====================
+GPU 使用情况:
+2, 1467, 12282, 45
+CPU 使用情况:
+%Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:40 CST 2025 ====================
+GPU 使用情况:
+7, 1443, 12282, 45
+CPU 使用情况:
+%Cpu(s):  0.3 us,  0.0 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:43 CST 2025 ====================
+GPU 使用情况:
+13, 1415, 12282, 45
+CPU 使用情况:
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:45 CST 2025 ====================
+GPU 使用情况:
+1, 1413, 12282, 45
+CPU 使用情况:
+%Cpu(s):  0.3 us,  0.0 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:48 CST 2025 ====================
+GPU 使用情况:
+3, 1411, 12282, 45
+CPU 使用情况:
+%Cpu(s):  2.3 us,  0.3 sy,  0.0 ni, 96.4 id,  0.0 wa,  0.0 hi,  1.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.2Gi       9.7Gi       1.0Mi       1.4Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+
+==================== Sun Jul  6 00:12:50 CST 2025 ====================
+GPU 使用情况:
+7, 1413, 12282, 45
+CPU 使用情况:
+%Cpu(s):  1.7 us,  0.7 sy,  0.0 ni, 94.4 id,  2.6 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.3Gi       9.6Gi       1.0Mi       1.5Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  317  2.1 3639880 281392 pts/10 Dl+  00:12   0:03 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:12:52 CST 2025 ====================
+GPU 使用情况:
+8, 1407, 12282, 45
+CPU 使用情况:
+%Cpu(s):  1.6 us,  2.0 sy,  0.0 ni, 96.1 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       1.5Gi       9.2Gi        65Mi       1.7Gi        10Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  313  5.0 44296132 655744 pts/10 Rl+ 00:12   0:09 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:12:55 CST 2025 ====================
+GPU 使用情况:
+0, 1667, 12282, 46
+CPU 使用情况:
+%Cpu(s): 14.9 us,  4.6 sy,  0.0 ni, 80.2 id,  0.3 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       2.6Gi       7.8Gi        67Mi       2.0Gi       9.5Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  235 13.7 45836996 1778724 pts/10 Rl+ 00:12   0:11 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:12:57 CST 2025 ====================
+GPU 使用情况:
+0, 1697, 12282, 47
+CPU 使用情况:
+%Cpu(s):  8.4 us, 12.0 sy,  0.0 ni, 77.9 id,  0.3 wa,  0.0 hi,  1.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       2.9Gi       7.4Gi        67Mi       2.0Gi       9.2Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  279 17.7 46233324 2298100 pts/10 Rl+ 00:12   0:22 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:00 CST 2025 ====================
+GPU 使用情况:
+0, 1697, 12282, 47
+CPU 使用情况:
+%Cpu(s):  7.9 us, 11.8 sy,  0.0 ni, 79.3 id,  0.3 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       3.5Gi       6.7Gi        67Mi       2.1Gi       8.6Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  318 22.4 46848516 2913300 pts/10 Rl+ 00:12   0:31 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:02 CST 2025 ====================
+GPU 使用情况:
+0, 1687, 12282, 45
+CPU 使用情况:
+%Cpu(s):  8.9 us, 12.5 sy,  0.0 ni, 78.4 id,  0.3 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       4.1Gi       6.1Gi        67Mi       2.2Gi       8.0Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  317 27.1 47454148 3519060 pts/10 Rl+ 00:12   0:41 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:04 CST 2025 ====================
+GPU 使用情况:
+0, 1666, 12282, 45
+CPU 使用情况:
+%Cpu(s):  7.1 us, 12.3 sy,  0.0 ni, 78.0 id,  0.3 wa,  0.0 hi,  2.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       4.7Gi       5.4Gi        67Mi       2.2Gi       7.4Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  338 31.9 48075972 4140660 pts/10 Rl+ 00:12   0:50 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:07 CST 2025 ====================
+GPU 使用情况:
+0, 1657, 12282, 45
+CPU 使用情况:
+%Cpu(s):  7.9 us, 12.2 sy,  0.0 ni, 79.3 id,  0.3 wa,  0.0 hi,  0.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       5.3Gi       4.8Gi        67Mi       2.3Gi       6.8Gi
+Swap:           16Gi       473Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  353 36.8 48707104 4772020 pts/10 Rl+ 00:12   1:00 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:09 CST 2025 ====================
+GPU 使用情况:
+0, 1657, 12282, 45
+CPU 使用情况:
+%Cpu(s):  8.2 us, 12.5 sy,  0.0 ni, 79.0 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       5.9Gi       4.1Gi        67Mi       2.4Gi       6.2Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  348 42.1 49392676 5457460 pts/10 Rl+ 00:12   1:09 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:12 CST 2025 ====================
+GPU 使用情况:
+0, 1657, 12282, 45
+CPU 使用情况:
+%Cpu(s):  8.6 us, 11.5 sy,  0.0 ni, 79.6 id,  0.3 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       6.5Gi       3.4Gi        67Mi       2.4Gi       5.5Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  359 47.0 50036816 6101460 pts/10 Rl+ 00:12   1:19 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:14 CST 2025 ====================
+GPU 使用情况:
+6, 1675, 12282, 45
+CPU 使用情况:
+%Cpu(s):  9.3 us, 12.2 sy,  0.0 ni, 75.6 id,  0.0 wa,  0.0 hi,  2.9 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       7.2Gi       2.7Gi        67Mi       2.5Gi       4.9Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  354 51.9 50674320 6739220 pts/10 Rl+ 00:12   1:28 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:16 CST 2025 ====================
+GPU 使用情况:
+0, 1670, 12282, 45
+CPU 使用情况:
+%Cpu(s):  7.7 us, 12.7 sy,  0.0 ni, 79.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       7.6Gi       2.2Gi        67Mi       2.6Gi       4.5Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  362 55.4 51127208 7191860 pts/10 Rl+ 00:12   1:37 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:19 CST 2025 ====================
+GPU 使用情况:
+0, 1670, 12282, 45
+CPU 使用情况:
+%Cpu(s):  6.8 us, 13.2 sy,  0.0 ni, 77.7 id,  0.0 wa,  0.0 hi,  2.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       8.0Gi       1.8Gi        67Mi       2.6Gi       4.1Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  371 58.6 51535212 7600020 pts/10 Rl+ 00:12   1:47 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:21 CST 2025 ====================
+GPU 使用情况:
+10, 1715, 12282, 45
+CPU 使用情况:
+%Cpu(s):  9.6 us, 11.2 sy,  0.0 ni, 77.2 id,  0.3 wa,  0.0 hi,  1.6 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       8.5Gi       1.2Gi        67Mi       2.7Gi       3.6Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  366 62.4 52032720 8097460 pts/10 Rl+ 00:12   1:57 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:24 CST 2025 ====================
+GPU 使用情况:
+21, 1704, 12282, 45
+CPU 使用情况:
+%Cpu(s):  7.5 us, 13.0 sy,  0.0 ni, 78.5 id,  0.3 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       9.0Gi       633Mi        67Mi       2.7Gi       3.1Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  372 66.8 52600104 8664980 pts/10 Rl+ 00:12   2:06 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:26 CST 2025 ====================
+GPU 使用情况:
+1, 1661, 12282, 47
+CPU 使用情况:
+%Cpu(s):  4.9 us, 15.5 sy,  0.0 ni, 78.0 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       9.5Gi       118Mi        67Mi       2.7Gi       2.6Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  370 70.9 53130276 9193460 pts/10 Rl+ 00:12   2:16 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:29 CST 2025 ====================
+GPU 使用情况:
+5, 1633, 12282, 46
+CPU 使用情况:
+%Cpu(s):  6.2 us, 14.1 sy,  0.0 ni, 79.0 id,  0.0 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi       9.7Gi       107Mi        67Mi       2.5Gi       2.3Gi
+Swap:           16Gi       472Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  377 72.8 53382268 9447060 pts/10 Rl+ 00:12   2:27 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:31 CST 2025 ====================
+GPU 使用情况:
+11, 1623, 12282, 46
+CPU 使用情况:
+%Cpu(s):  6.6 us, 14.1 sy,  0.0 ni, 78.4 id,  0.0 wa,  0.0 hi,  1.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        10Gi       101Mi        67Mi       2.1Gi       2.0Gi
+Swap:           16Gi       477Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  374 75.9 53784152 9848820 pts/10 Rl+ 00:12   2:37 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:34 CST 2025 ====================
+GPU 使用情况:
+5, 1623, 12282, 46
+CPU 使用情况:
+%Cpu(s):  9.2 us, 12.5 sy,  0.0 ni, 77.7 id,  0.0 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        10Gi       101Mi        66Mi       1.8Gi       1.6Gi
+Swap:           16Gi       477Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  380 79.1 54192156 10256020 pts/10 Rl+ 00:12   2:47 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:36 CST 2025 ====================
+GPU 使用情况:
+7, 1622, 12282, 46
+CPU 使用情况:
+%Cpu(s):  6.9 us, 14.5 sy,  0.0 ni, 78.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi        95Mi        66Mi       1.2Gi       1.0Gi
+Swap:           16Gi       477Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  377 83.6 54775728 10838900 pts/10 Rl+ 00:12   2:57 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:39 CST 2025 ====================
+GPU 使用情况:
+9, 1622, 12282, 46
+CPU 使用情况:
+%Cpu(s):  5.0 us, 16.2 sy,  0.0 ni, 78.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       100Mi        66Mi       898Mi       715Mi
+Swap:           16Gi       477Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  382 85.5 55119984 11096180 pts/10 Rl+ 00:12   3:07 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:41 CST 2025 ====================
+GPU 使用情况:
+7, 1622, 12282, 45
+CPU 使用情况:
+%Cpu(s):  9.5 us, 11.8 sy,  0.0 ni, 78.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi        97Mi        66Mi       503Mi       316Mi
+Swap:           16Gi       477Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  380 87.4 55540736 11337460 pts/10 Rl+ 00:12   3:17 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:44 CST 2025 ====================
+GPU 使用情况:
+25, 1622, 12282, 46
+CPU 使用情况:
+%Cpu(s):  9.4 us, 14.0 sy,  0.0 ni, 63.8 id, 12.1 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       111Mi        66Mi       314Mi       160Mi
+Swap:           16Gi       925Mi        15Gi
+Python SLAM 进程:
+mkaros     28421  380 87.9 56130688 11399380 pts/10 Rl+ 00:12   3:29 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:47 CST 2025 ====================
+GPU 使用情况:
+20, 1622, 12282, 46
+CPU 使用情况:
+%Cpu(s):  9.4 us, 12.0 sy,  0.0 ni, 77.3 id,  0.6 wa,  0.0 hi,  0.6 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi        94Mi        66Mi       449Mi       256Mi
+Swap:           16Gi       1.6Gi        14Gi
+Python SLAM 进程:
+mkaros     28421  377 87.2 56784388 11308180 pts/10 Rl+ 00:12   3:38 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:50 CST 2025 ====================
+GPU 使用情况:
+20, 1641, 12282, 46
+CPU 使用情况:
+%Cpu(s):  9.2 us, 14.4 sy,  0.0 ni, 72.5 id,  3.3 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       105Mi        66Mi       472Mi       293Mi
+Swap:           16Gi       2.3Gi        13Gi
+Python SLAM 进程:
+mkaros     28421  377 86.8 57416476 11262100 pts/10 Rl+ 00:12   3:50 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:52 CST 2025 ====================
+GPU 使用情况:
+21, 1641, 12282, 46
+CPU 使用情况:
+%Cpu(s):  7.5 us,  8.5 sy,  0.0 ni, 82.3 id,  0.7 wa,  0.0 hi,  1.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       105Mi        66Mi       532Mi       353Mi
+Swap:           16Gi       2.7Gi        13Gi
+Python SLAM 进程:
+mkaros     28421  376 86.1 57796688 11166900 pts/10 Dl+ 00:12   3:57 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:55 CST 2025 ====================
+GPU 使用情况:
+15, 1645, 12282, 45
+CPU 使用情况:
+%Cpu(s):  7.8 us, 13.0 sy,  0.0 ni, 69.2 id, 10.1 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi        95Mi        66Mi       487Mi       298Mi
+Swap:           16Gi       3.1Gi        12Gi
+Python SLAM 进程:
+mkaros     28421  368 84.7 58042128 10981620 pts/10 Rl+ 00:12   4:03 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:13:57 CST 2025 ====================
+GPU 使用情况:
+12, 1670, 12282, 45
+CPU 使用情况:
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 85.1 id, 14.9 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       117Mi        66Mi       447Mi       280Mi
+Swap:           16Gi       3.4Gi        12Gi
+Python SLAM 进程:
+mkaros     28421  368 84.8 58380008 11004180 pts/10 Dl+ 00:12   4:10 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:01 CST 2025 ====================
+GPU 使用情况:
+0, 1734, 12282, 46
+CPU 使用情况:
+%Cpu(s):  9.7 us,  3.7 sy,  0.0 ni, 73.7 id, 12.3 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       117Mi        66Mi       544Mi       378Mi
+Swap:           16Gi       3.8Gi        12Gi
+Python SLAM 进程:
+mkaros     28421  355 83.6 58758600 10844372 pts/10 Rl+ 00:12   4:15 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:04 CST 2025 ====================
+GPU 使用情况:
+12, 1857, 12282, 45
+CPU 使用情况:
+%Cpu(s):  2.6 us,  2.6 sy,  0.0 ni, 94.1 id,  0.7 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       120Mi        66Mi       608Mi       445Mi
+Swap:           16Gi       4.0Gi        11Gi
+Python SLAM 进程:
+mkaros     28421  342 85.9 59409748 11147252 pts/10 Rl+ 00:12   4:17 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:06 CST 2025 ====================
+GPU 使用情况:
+7, 2041, 12282, 45
+CPU 使用情况:
+%Cpu(s):  5.6 us,  1.3 sy,  0.0 ni, 89.8 id,  3.0 wa,  0.0 hi,  0.3 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       122Mi        70Mi       756Mi       590Mi
+Swap:           16Gi       4.8Gi        11Gi
+Python SLAM 进程:
+mkaros     28421  335 85.5 60462932 11083892 pts/10 Rl+ 00:12   4:18 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:09 CST 2025 ====================
+GPU 使用情况:
+89, 2384, 12282, 46
+CPU 使用情况:
+%Cpu(s):  6.6 us,  1.0 sy,  0.0 ni, 92.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       135Mi        72Mi       864Mi       709Mi
+Swap:           16Gi       5.3Gi        10Gi
+Python SLAM 进程:
+mkaros     28421  339 86.7 61916544 11251572 pts/10 Rl+ 00:12   4:28 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:11 CST 2025 ====================
+GPU 使用情况:
+9, 2631, 12282, 49
+CPU 使用情况:
+%Cpu(s): 48.9 us,  7.5 sy,  0.0 ni, 41.4 id,  2.3 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       176Mi        72Mi       905Mi       791Mi
+Swap:           16Gi       5.4Gi        10Gi
+Python SLAM 进程:
+mkaros     28421  340 86.3 63435420 11191080 pts/10 Rl+ 00:12   4:39 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:14 CST 2025 ====================
+GPU 使用情况:
+33, 2522, 12282, 56
+CPU 使用情况:
+%Cpu(s): 53.2 us, 11.5 sy,  0.0 ni, 33.8 id,  0.0 wa,  0.0 hi,  1.6 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       171Mi        72Mi       895Mi       777Mi
+Swap:           16Gi       5.5Gi        10Gi
+Python SLAM 进程:
+mkaros     28421  359 86.4 63482916 11200200 pts/10 Rl+ 00:12   5:01 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:16 CST 2025 ====================
+GPU 使用情况:
+32, 2590, 12282, 52
+CPU 使用情况:
+%Cpu(s): 52.6 us, 12.8 sy,  0.0 ni, 33.7 id,  0.3 wa,  0.0 hi,  0.6 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       127Mi        72Mi       896Mi       733Mi
+Swap:           16Gi       5.5Gi        10Gi
+Python SLAM 进程:
+mkaros     28421  373 86.6 63514792 11238760 pts/10 Rl+ 00:12   5:25 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:18 CST 2025 ====================
+GPU 使用情况:
+39, 2898, 12282, 49
+CPU 使用情况:
+%Cpu(s): 50.3 us, 12.6 sy,  0.0 ni, 34.0 id,  0.9 wa,  0.0 hi,  2.2 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       131Mi        72Mi       893Mi       734Mi
+Swap:           16Gi       5.6Gi        10Gi
+Python SLAM 进程:
+mkaros     28421  394 86.6 63514792 11235720 pts/10 Rl+ 00:12   5:51 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:21 CST 2025 ====================
+GPU 使用情况:
+33, 2867, 12282, 50
+CPU 使用情况:
+%Cpu(s): 50.6 us, 13.9 sy,  0.0 ni, 33.5 id,  1.0 wa,  0.0 hi,  1.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       132Mi        72Mi       890Mi       732Mi
+Swap:           16Gi       5.6Gi        10Gi
+Python SLAM 进程:
+mkaros     28421  414 86.6 63514792 11231880 pts/10 Rl+ 00:12   6:16 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:23 CST 2025 ====================
+GPU 使用情况:
+2, 2527, 12282, 49
+CPU 使用情况:
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 94.7 id,  5.3 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       144Mi        72Mi       860Mi       715Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  421 82.6 63514792 10718280 pts/10 Dl+ 00:12   6:35 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:26 CST 2025 ====================
+GPU 使用情况:
+38, 2761, 12282, 49
+CPU 使用情况:
+%Cpu(s):  5.3 us,  0.7 sy,  0.0 ni, 94.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       141Mi        72Mi       863Mi       715Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  422 82.7 63514792 10726280 pts/10 Rl+ 00:12   6:45 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:28 CST 2025 ====================
+GPU 使用情况:
+42, 2865, 12282, 51
+CPU 使用情况:
+%Cpu(s): 34.0 us,  5.9 sy,  0.0 ni, 58.4 id,  1.0 wa,  0.0 hi,  0.7 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       130Mi        72Mi       862Mi       702Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  432 83.0 63514792 10770760 pts/10 Rl+ 00:12   7:08 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:30 CST 2025 ====================
+GPU 使用情况:
+32, 2873, 12282, 52
+CPU 使用情况:
+%Cpu(s): 51.9 us, 11.6 sy,  0.0 ni, 35.5 id,  1.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       135Mi        72Mi       859Mi       704Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  449 83.4 63514792 10814760 pts/10 Rl+ 00:12   7:34 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:33 CST 2025 ====================
+GPU 使用情况:
+36, 2589, 12282, 53
+CPU 使用情况:
+%Cpu(s): 51.2 us, 12.8 sy,  0.0 ni, 32.8 id,  0.3 wa,  0.0 hi,  2.8 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       135Mi        72Mi       857Mi       703Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  465 83.7 63514792 10860840 pts/10 Rl+ 00:12   7:59 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:35 CST 2025 ====================
+GPU 使用情况:
+29, 2604, 12282, 54
+CPU 使用情况:
+%Cpu(s): 51.3 us, 13.8 sy,  0.0 ni, 31.7 id,  1.0 wa,  0.0 hi,  2.2 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       129Mi        72Mi       854Mi       694Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  475 84.4 63559416 10947720 pts/10 Rl+ 00:12   8:24 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:38 CST 2025 ====================
+GPU 使用情况:
+31, 2549, 12282, 52
+CPU 使用情况:
+%Cpu(s): 51.9 us, 13.0 sy,  0.0 ni, 34.1 id,  0.0 wa,  0.0 hi,  1.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       132Mi        72Mi       852Mi       695Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  490 84.7 63559416 10991720 pts/10 Rl+ 00:12   8:50 python slam.py --config ./configs/replica/office0.yaml
+
+==================== Sun Jul  6 00:14:40 CST 2025 ====================
+GPU 使用情况:
+27, 2585, 12282, 54
+CPU 使用情况:
+%Cpu(s): 52.0 us, 13.2 sy,  0.0 ni, 34.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+内存使用情况:
+               total        used        free      shared  buff/cache   available
+Mem:            12Gi        11Gi       132Mi        72Mi       848Mi       691Mi
+Swap:           16Gi       6.1Gi       9.9Gi
+Python SLAM 进程:
+mkaros     28421  500 85.2 63578540 11053160 pts/10 Rl+ 00:12   9:15 python slam.py --config ./configs/replica/office0.yaml
+

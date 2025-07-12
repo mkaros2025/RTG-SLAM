@@ -53,6 +53,11 @@ def loadCam(args, id, cam_info, resolution_scale):
     if resized_image_rgb.shape[1] == 4:
         loaded_mask = resized_image_rgb[3:4, ...]
 
+    # 立即释放延迟加载的数据，避免内存累积
+    # 只有LazyLoadCameraInfo对象才有release_data方法
+    if hasattr(cam_info, 'release_data'):
+        cam_info.release_data()
+
     return Camera(
         colmap_id=cam_info.uid,
         R=cam_info.R,

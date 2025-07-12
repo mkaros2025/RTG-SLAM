@@ -1,20 +1,26 @@
-#!/bin/bash  
+#!/bin/bash
+
+# Activate conda environment
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate RTG-SLAM
 
 mkdir -p thirdParty && cd thirdParty
 install_path=$(pwd)/install
 mkdir -p ${install_path}
 
-python_prefix=$(python -c "import sys; print(sys.prefix)")  
+python_prefix=$(python -c "import sys; print(sys.prefix)")
 python_include=${python_prefix}/include/python3.9/
 python_lib=${python_prefix}/lib/libpython3.9.so
 python_exe=${python_prefix}/bin/python
 python_env=${python_prefix}/lib/python3.9/site-packages/
-numpy_include=$(python -c "import numpy; print(numpy.get_include())")  
+numpy_include=$(python -c "import numpy; print(numpy.get_include())")
 
 echo ${python_env}
 
 # # build pangolin
-git clone -b v0.5 https://github.com/stevenlovegrove/Pangolin.git
+if [ ! -d "Pangolin" ]; then
+    git clone -b v0.5 https://github.com/stevenlovegrove/Pangolin.git
+fi
 cd Pangolin
 mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=${install_path}
@@ -22,12 +28,27 @@ make install -j
 
 # build opencv-4.2.0
 cd ../../
-wget https://github.com/opencv/opencv/archive/4.2.0.zip
-unzip 4.2.0.zip
+# Skip download and extraction if opencv-4.2.0 directory already exists
+if [ ! -f "4.2.0.zip" ]; then
+    wget https://github.com/opencv/opencv/archive/4.2.0.zip
+fi
+if [ ! -d "opencv-4.2.0" ]; then
+    unzip -o 4.2.0.zip
+fi
 cd opencv-4.2.0
 mkdir -p build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=${install_path}
-make install -j 
+cmake .. -DCMAKE_INSTALL_PREFIX=${install_path} \
+         -DCMAKE_BUILD_TYPE=Release \
+         -DBUILD_TESTS=OFF \
+         -DBUILD_PERF_TESTS=OFF \
+         -DBUILD_EXAMPLES=OFF \
+         -DBUILD_opencv_apps=OFF \
+         -DBUILD_DOCS=OFF \
+         -DWITH_CUDA=OFF \
+         -DWITH_OPENGL=OFF \
+         -DWITH_QT=OFF \
+         -DWITH_GTK=OFF
+make install -j$(nproc)
 
 opencv_dir=${install_path}/lib/cmake/opencv4
 
@@ -40,8 +61,12 @@ cd ../
 
 # # build pybind
 # # build boost
-wget -t 999 -c https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.zip
-unzip boost_1_80_0.zip
+if [ ! -f "boost_1_80_0.tar.gz" ]; then
+    wget https://sourceforge.net/projects/boost/files/boost/1.80.0/boost_1_80_0.tar.gz/download -O boost_1_80_0.tar.gz
+fi
+if [ ! -d "boost_1_80_0" ]; then
+    tar -xzf boost_1_80_0.tar.gz
+fi
 cd boost_1_80_0
 ./bootstrap.sh --with-libraries=python --prefix=${install_path} --with-python=${python_exe}
 

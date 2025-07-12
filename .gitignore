@@ -14,4 +14,5 @@ diff-gaussian-rasterizer-depth
 simple-knn
 *.txt
 build
-lib
+libthirdParty/4.2.0.zip
+thirdParty/opencv_contrib-4.2.0.zip

@@ -70,6 +70,11 @@ render_mode: "ours" # "torch", "ours"
 depth_mode: "normal" # 'alpha', "opaque", "normal"
 global_opt_top_ratio: 0.4
 
+# dynamic threshold params
+use_dynamic_threshold: True   # 是否启用动态阈值
+dynamic_threshold_k: 1.0      # 动态阈值调节参数 k
+curvature_radius_threshold: 0.2  # 计算曲率时的邻域半径阈值
+
 
 # optimize params:
 gaussian_update_iter: 100

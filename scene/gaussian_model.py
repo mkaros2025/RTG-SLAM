@@ -28,9 +28,54 @@ from utils.graphics_utils import BasicPointCloud
 from utils.sh_utils import RGB2SH, SH2RGB
 
 
-def gaussian_3d_coeff(xyzs, covs):
-    # xyzs: [N, 3]
-    # covs: [N, 6]
+def compute_regional_curvature(gaussians_xyz, gaussians_normals, query_points, radius_threshold=0.1):
+    """
+    简单高效的区域曲率计算 κ_i = ||∇n_i||
+    基于邻域法向量的标准差作为曲率代理
+
+    Args:
+        gaussians_xyz: [N, 3] - 高斯位置
+        gaussians_normals: [N, 3] - 高斯法向量
+        query_points: [M, 3] - 查询点位置
+        radius_threshold: 邻域半径阈值
+
+    Returns:
+        [M] - 每个查询点的区域曲率代理，原始值不归一化
+    """
+    device = gaussians_xyz.device
+    M = query_points.shape[0]
+    curvatures = torch.zeros(M, device=device)
+
+    # 确保法向量已归一化
+    gaussians_normals = gaussians_normals / (torch.norm(gaussians_normals, dim=1, keepdim=True) + 1e-8)
+
+    for i, query_point in enumerate(query_points):
+        # 计算到所有高斯的距离
+        distances = torch.norm(gaussians_xyz - query_point.unsqueeze(0), dim=1)
+        neighbor_mask = distances < radius_threshold
+
+        if neighbor_mask.sum() >= 3:
+            # 获取邻域法向量
+            neighbor_normals = gaussians_normals[neighbor_mask]
+
+            # 方法：计算法向量的标准差作为曲率代理
+            # 平坦区域：法向量相似，标准差小 → 低曲率
+            # 弯曲区域：法向量变化大，标准差大 → 高曲率
+            normal_std = torch.std(neighbor_normals, dim=0).mean()
+            curvatures[i] = normal_std
+        else:
+            # 邻域点不足3个，无法可靠计算曲率，返回None
+            return None
+
+    # 直接返回原始曲率值，不进行归一化
+    return curvatures
+
+
+def gaussian_3d_coeff(xyzs, covs, regional_curvatures=None, k=1.0, use_dynamic_threshold=False):
+    # xyzs: [N, 3] - 查询点坐标
+    # covs: [N, 6] - 高斯协方差矩阵
+    # regional_curvatures: [N] - 每个查询点的区域曲率代理
+    # k: 动态阈值调节参数，默认0.8
     x, y, z = xyzs[:, 0], xyzs[:, 1], xyzs[:, 2]
     a, b, c, d, e, f = (
         covs[:, 0],
@@ -52,8 +97,16 @@ def gaussian_3d_coeff(xyzs, covs):
     inv_e = (b * c - e * a) * inv_det
     inv_f = (a * d - b**2) * inv_det
 
+    # 计算动态阈值系数：δ_α,i = e^(k(κ_i - 1))
+    # 高曲率区域(κ_i大) → δ_α,i大 → 需要更高的高斯密度才能通过阈值 → 更精细的面元
+    # 低曲率区域(κ_i小) → δ_α,i小 → 较低的高斯密度就能通过阈值 → 更粗糙的面元
+    if use_dynamic_threshold and regional_curvatures is not None:
+        gaussian_tightness = k * (0.8 - regional_curvatures)  # 动态的"紧致度"参数
+    else:
+        gaussian_tightness = 0.5  # 默认值（静态阈值）
+
     power = (
-        -0.5 * (x**2 * inv_a + y**2 * inv_d + z**2 * inv_f)
+        -gaussian_tightness * (x**2 * inv_a + y**2 * inv_d + z**2 * inv_f)
         - x * y * inv_b
         - x * z * inv_c
         - y * z * inv_e
@@ -91,6 +144,7 @@ class GaussianModel:
         self._scaling = torch.empty(0)
         self._rotation = torch.empty(0)
         self._opacity = torch.empty(0)
+        self._normal = torch.empty(0)  # 添加法向量属性用于曲率计算
         self.max_radii2D = torch.empty(0)
         self.xyz_gradient_accum = torch.empty(0)
         self.denom = torch.empty(0)
@@ -276,7 +330,9 @@ class GaussianModel:
                 return lr
 
     @torch.no_grad()
-    def extract_fields(self, resolution=128, num_blocks=16, relax_ratio=1.5):
+    def extract_fields(self, resolution=128, num_blocks=16, relax_ratio=1.5,
+                      use_dynamic_threshold=False, dynamic_threshold_k=1.0,
+                      curvature_radius_threshold=0.1):
         # resolution: resolution of field
 
         block_size = 2 / num_blocks
@@ -343,14 +399,37 @@ class GaussianModel:
                         pts.shape[0], 1, 1
                     )  # [M, L, 6]
 
+                    # 计算区域曲率代理（如果启用动态阈值且有法向量信息）
+                    regional_curvatures = None
+                    if use_dynamic_threshold and hasattr(self, '_normal') and self._normal.numel() > 0:
+                        # 获取当前块内高斯的法向量
+                        mask_normals = self._normal[mask]  # [L, 3]
+                        # 为每个查询点计算区域曲率
+                        regional_curvatures = compute_regional_curvature(
+                            mask_xyzs, mask_normals, pts, radius_threshold=curvature_radius_threshold
+                        )  # [M] 或 None（如果邻域点不足）
+
                     # batch on gaussian to avoid OOM
                     batch_g = 1024
                     val = 0
                     for start in range(0, g_covs.shape[1], batch_g):
                         end = min(start + batch_g, g_covs.shape[1])
+
+                        # 获取当前批次对应的查询点曲率
+                        batch_curvatures = None
+                        if regional_curvatures is not None:
+                            # 每个查询点对应多个高斯，需要重复曲率值
+                            batch_size = end - start
+                            batch_curvatures = regional_curvatures.unsqueeze(1).repeat(
+                                1, batch_size
+                            ).reshape(-1)  # [M * batch_size]
+
                         w = gaussian_3d_coeff(
                             g_pts[:, start:end].reshape(-1, 3),
                             g_covs[:, start:end].reshape(-1, 6),
+                            regional_curvatures=batch_curvatures,
+                            k=dynamic_threshold_k,  # 动态阈值参数
+                            use_dynamic_threshold=use_dynamic_threshold  # 是否启用动态阈值
                         ).reshape(
                             pts.shape[0], -1
                         )  # [M, l]
